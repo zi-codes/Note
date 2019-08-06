@@ -6,23 +6,38 @@
 
   </head>
 <body>
-<h1> Note </h1>
-
-  <main>
-<div class="page">
 
 
-  <div class="new-note">
-    <form class="input" action="index.html" method="post">
-      <textarea name="textarea" id="textarea" rows="8" cols="80" placeholder="Start writing!"></textarea>
-      <input type="submit" id="create" name="Create" value="Create">
-    </form>
+
+
+  <div class="page">
+
+    <header></header>
+
+    <div class="create-container">
+      <form class="input" action="index.html" method="post">
+        <textarea name="textarea" id="textarea" rows="8" cols="80" placeholder="Start writing!"></textarea>
+        <input type="submit" id="create" name="Create" value="Create">
+      </form>
+    </div>
+
+    <div class="notes-container">
+
+      <div id="0" class="note">
+      </div>
+
+    </div>
+
+
+    <!--- id will be the index of the note starting from 0 --->
+    <div id="" class="expanded-note">
+    </div>
+
+
   </div>
 
-
-</div>
-  </main>
 </body>
+
 <script src="Lit/Note.js"></script>
 <script src="J-Zi/testhelpers/describe.js"></script>
 <script src="J-Zi/testhelpers/it.js"></script>
