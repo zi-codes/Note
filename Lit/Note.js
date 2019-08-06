@@ -22,8 +22,8 @@ const napp = {
     create.addEventListener('click', function(event){
       event.preventDefault();
       let new_note = document.getElementById('textarea').value;
-
-      console.log(new_note)
+      napp.add(new_note)
+      console.log(napp.notes)
     })
   }
 
