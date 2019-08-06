@@ -12,3 +12,5 @@ describe('Note', function(){
    assert.isTrue((napp.all()[0]).length == 20);
  });
 })
+
+napp.notes = [];
