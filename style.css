@@ -123,3 +123,20 @@ footer {
   background-color: #008CBA;
   color: white
 }
+
+
+body {
+  overflow: hidden;
+  cursor: move;
+}
+.Bubble, #UserBubble {
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 1000px;
+  background: -webkit-linear-gradient(white, rgba(0, 0, 0, 0.15));
+}
+#UserBubble {
+  height: 50px;
+  width: 50px;
+  margin: -25px;
+}
