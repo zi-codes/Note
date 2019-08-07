@@ -22,7 +22,7 @@ const napp = {
     let hidden_notes_container = document.getElementById('hidden-notes-container') //finds the element with ID and saves to variable
     hidden_notes_container.innerHTML = "" //changes text of that saved variable
     napp.notes.forEach(function (note) { //iterates over all notes and creates a div which has their own ID consisting of the index of the note AND the note
-      hidden_notes_container.innerHTML += `<div id="${napp.all().indexOf(note)}b" class="expanded-note">${note}</div>`
+      hidden_notes_container.innerHTML += `<div id="${napp.notes.indexOf(note)}b" class="expanded-note">${note}</div>`
     })
   },
 
@@ -33,7 +33,6 @@ const napp = {
       let new_note = document.getElementById('textarea').value; // grabs the value of text-box using the corresponding ID
       napp.add(new_note)
       document.getElementById('textarea').value = "" // empties text area
-      console.log(napp.notes)
       napp.show_notes()
       napp.add_expanded_notes()
       napp.add_links()
@@ -59,6 +58,7 @@ const napp = {
 }
 
 document.addEventListener('DOMContentLoaded', napp.init);
+
 
 
 // console.log(napp.notes);
