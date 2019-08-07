@@ -21,6 +21,7 @@ const napp = {
 
   },
 
+
   clickable_notes: function () {
     window.addEventListener("hashchange",function(event) {  //listens for a change ofthe hash in the url
       // event.preventDefault();      // prevents loosing data when
@@ -32,7 +33,6 @@ const napp = {
         showFullNote(id);
         hidePage();
       }
-
     })
 
     function getIdFromUrl(location) {
@@ -97,8 +97,6 @@ const napp = {
 }
 
 document.addEventListener('DOMContentLoaded', napp.init);
-
-
 
 
 // console.log(napp.notes);
