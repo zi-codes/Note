@@ -22,7 +22,7 @@ body {
   border-color: rgba(255, 255, 255, 0.45);
 }
 
-#page, #page2 {
+#page {
   height: 100vh;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto 1fr 1fr auto;
@@ -34,29 +34,44 @@ body {
   "footer footer footer footer"
 }
 
-#hidden-notes-container {
+#page2 {
   height: 100vh;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto 1fr 1fr auto;
   grid-row-gap: 20px;
   grid-template-areas:
   "header header header header"
-  ". note note ."
+  ". notes notes ."
   "footer footer footer footer"
 }
 
 #expanded-note {
-  grid-area: note;
+  grid-area: notes;
   background-color: rgba(255, 255, 255, 0.5);
   text-align: center;
 }
 
 .inactive {
   display: none;
+  -webkit-transition: 0.9s; /* Safari */
+  transition: 0.9s;
 }
 
+.inactive:active {
+  transition-property: all;
+  transition-duration: 0.9s;
+  opacity: 0;
+}
 .active {
   display: grid;
+  transition-property: all;
+  transition-duration: 0.4s;
+}
+
+.active:active {
+  transition-property: all;
+  transition-duration: 0.9s;
+  opacity: 0;
 }
 
 header {

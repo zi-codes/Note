@@ -20,13 +20,13 @@ const napp = {
 
 
   },
-  
+
   clickable_notes: function () {
     window.addEventListener("hashchange",function(event) {  //listens for a change ofthe hash in the url
       event.preventDefault();      // prevents losing data when
       let id = getIdFromUrl(window.location);   // gets id from Url
       if (id == undefined) {      // if id is undefined, we change the current page to hidden, and make the hidden note visible
-        document.getElementById('hidden-notes-container').classList = "inactive";  // id if undefined only when we want to go back to home page, so we want to hide the hidden note whenver this happens.
+        document.getElementById('page2').classList = "inactive";  // id if undefined only when we want to go back to home page, so we want to hide the hidden note whenver this happens.
         document.getElementById('page').classList = "active";
       } else {
         hidePage();
@@ -39,9 +39,9 @@ const napp = {
     };
 
     function showFullNote(index) {
-      document.getElementById('hidden-notes-container').classList = "active";
+      document.getElementById('page2').classList = "active";
       document
-      .getElementById("hidden-notes-container")
+      .getElementById("page2")
       .innerHTML = `<div class="expanded-note" id="expanded-note">${napp.notes[index]}</div>`     // changes the text of the hidden note container to the long note, found using the id of the note as the index, and the id is essentially the href added to the url
     }
     function hidePage() {
