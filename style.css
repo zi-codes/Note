@@ -22,9 +22,8 @@ body {
   border-color: rgba(255, 255, 255, 0.45);
 }
 
-#page {
+#page, #page2 {
   height: 100vh;
-  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto 1fr 1fr auto;
   grid-row-gap: 20px;
@@ -33,6 +32,31 @@ body {
   ". create create ."
   ". notes notes ."
   "footer footer footer footer"
+}
+
+#hidden-notes-container {
+  height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr 1fr auto;
+  grid-row-gap: 20px;
+  grid-template-areas:
+  "header header header header"
+  ". note note ."
+  "footer footer footer footer"
+}
+
+#expanded-note {
+  grid-area: note;
+  background-color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+}
+
+.inactive {
+  display: none;
+}
+
+.active {
+  display: grid;
 }
 
 header {

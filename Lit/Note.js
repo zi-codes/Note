@@ -20,18 +20,17 @@ const napp = {
 
 
   },
-
-
+  
   clickable_notes: function () {
     window.addEventListener("hashchange",function(event) {  //listens for a change ofthe hash in the url
-      // event.preventDefault();      // prevents loosing data when
+      event.preventDefault();      // prevents losing data when
       let id = getIdFromUrl(window.location);   // gets id from Url
       if (id == undefined) {      // if id is undefined, we change the current page to hidden, and make the hidden note visible
-        document.getElementById('page').removeAttribute("hidden");
-        document.getElementById('hidden-notes-container').setAttribute("hidden", true);  // id if undefined only when we want to go back to home page, so we want to hide the hidden note whenver this happens. 
+        document.getElementById('hidden-notes-container').classList = "inactive";  // id if undefined only when we want to go back to home page, so we want to hide the hidden note whenver this happens.
+        document.getElementById('page').classList = "active";
       } else {
-        showFullNote(id);
         hidePage();
+        showFullNote(id);
       }
     })
 
@@ -40,15 +39,14 @@ const napp = {
     };
 
     function showFullNote(index) {
-      document.getElementById('hidden-notes-container').removeAttribute("hidden");
+      document.getElementById('hidden-notes-container').classList = "active";
       document
       .getElementById("hidden-notes-container")
-      .innerHTML = napp.notes[index]     // changes the text of the hidden note container to the long note, found using the id of the note as the index, and the id is essentially the href added to the url
+      .innerHTML = `<div class="expanded-note" id="expanded-note">${napp.notes[index]}</div>`     // changes the text of the hidden note container to the long note, found using the id of the note as the index, and the id is essentially the href added to the url
     }
     function hidePage() {
-      document
-      .getElementById("page").setAttribute("hidden", true);    // hides the current page, however js only remembers the url, so the page will not unhide when we want to click on another note, so we need to remove the hidden attribute if id is undefined, i.e. if we want to go back to index, so it will display our notes
-
+      document.getElementById("page").classList.remove("active");    // hides the current page, however js only remembers the url, so the page will not unhide when we want to click on another note, so we need to remove the hidden attribute if id is undefined, i.e. if we want to go back to index, so it will display our notes
+      document.getElementById("page").classList.add("inactive");
     }
 
   },
